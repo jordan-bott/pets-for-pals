@@ -1,9 +1,14 @@
 import { useState } from "react";
+
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+
+// will get breed list from the api later
+const BREEDS = [];
 
 const SearchParams = () => {
   const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
+  const [breed, setBreed] = useState("");
 
   return (
     <div className="search-params">
@@ -28,6 +33,22 @@ const SearchParams = () => {
             {ANIMALS.map((a) => (
               <option key={a} value={a}>
                 {a}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label htmlFor="breed">
+          Breed
+          <select
+            id="breed"
+            disabled={BREEDS.length === 0}
+            value={breed}
+            onChange={(e) => setBreed(e.target.value)}
+          >
+            <option />
+            {BREEDS.map((b) => (
+              <option key={b} value={b}>
+                {b}
               </option>
             ))}
           </select>
