@@ -18,7 +18,7 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <BrowserRouter>
-      <QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
         <header>
           <Link to="/">Adopt Me!</Link>
         </header>
