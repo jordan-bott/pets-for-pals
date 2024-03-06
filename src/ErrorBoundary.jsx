@@ -14,7 +14,9 @@ class ErrorBoundary extends Component {
   }
 
   render() {
+    console.log("render");
     if (this.state.hasError) {
+      console.log("erroring");
       return (
         <h2>
           There was an error with this listing.{" "}
@@ -22,6 +24,7 @@ class ErrorBoundary extends Component {
         </h2>
       );
     }
+    console.log("really erroring");
     return this.props.children;
   }
 }

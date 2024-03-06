@@ -21,9 +21,6 @@ const SearchParams = () => {
     queryFn: fetchSearch,
   });
 
-  console.log("results", results);
-  console.log(requestParams);
-
   const pets = results?.data?.pets ?? [];
 
   return (
